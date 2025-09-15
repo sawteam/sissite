@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайс-лист на ботов и инструменты</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            flex: 1;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-weight: 600;
+            font-size: 32px;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-weight: 300;
+            opacity: 0.9;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .price-list {
+            padding: 40px 30px;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 25px;
+            border-bottom: 1px solid #f1f1f1;
+            transition: all 0.3s ease;
+        }
+        
+        .price-item:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-2px);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-info {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        
+        .sticker {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        /* Стили для различных стикеров */
+        .sticker-ai { 
+            background: url('ai.png') center/contain no-repeat;
+        }
+        .sticker-chat { 
+            background: url('chat.png') center/contain no-repeat;
+        }
+        .sticker-shop { 
+            background: url('shop.png') center/contain no-repeat;
+        }
+        .sticker-download { 
+            background: url('download.png') center/contain no-repeat;
+        }
+        .sticker-anonymous { 
+            background: url('ss.png') center/contain no-repeat;
+        }
+        .sticker-todo { 
+            background: url('todo.png') center/contain no-repeat;
+        }
+        .sticker-posting { 
+            background: url('posting.png') center/contain no-repeat;
+        }
+        .sticker-encrypt { 
+            background: url('encrypt.png') center/contain no-repeat;
+        }
+        .sticker-server { 
+            background: url('server.png') center/contain no-repeat;
+        }
+        .sticker-osint { 
+            background: url('osint.png') center/contain no-repeat;
+        }
+        .sticker-db { 
+            background: url('db.png') center/contain no-repeat;
+        }
+        .sticker-software { 
+            background: url('soft.png') center/contain no-repeat;
+        }
+        
+        .service-name {
+            font-weight: 500;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        
+        .price {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .rub {
+            font-weight: 600;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+        
+        .usd {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+        
+        .highlight {
+            background-color: #f8f9fa;
+            border-left: 5px solid #6a11cb;
+        }
+        
+        .contacts {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            max-width: 1000px;
+            width: 100%;
+        }
+        
+        .contacts p {
+            font-size: 18px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .tg-link {
+            color: #2aabee;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+        
+        .tg-link:hover {
+            color: #229ed9;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 650px) {
+            .price-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 18px 20px;
+            }
+            
+            .price {
+                align-items: flex-start;
+                margin-left: 54px;
+            }
+            
+            .price-list {
+                padding: 25px 20px;
+            }
+            
+            header {
+                padding: 25px 20px;
+            }
+            
+            h1 {
+                font-size: 26px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .contacts {
+                margin: 15px 0;
+                padding: 12px;
+            }
+            
+            .contacts p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Прайс-лист на ботов и инструменты</h1>
+            <p class="subtitle">Актуальные цены на разработку ботов и доступ к инструментам</p>
+        </header>
+        
+        <div class="price-list">
+            <div class="price-item highlight">
+                <div class="service-info">
+                    <div class="sticker sticker-ai"></div>
+                    <span class="service-name">ИИ боты</span>
+                </div>
+                <div class="price">
+                    <span class="rub">600₽</span>
+                    <span class="usd">7,16$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-chat"></div>
+                    <span class="service-name">Чат-боты (без телеграм премиум)</span>
+                </div>
+                <div class="price">
+                    <span class="rub">500₽</span>
+                    <span class="usd">5,97$</span>
+                </div>
+            </div>
+            
+            <div class="price-item highlight">
+                <div class="service-info">
+                    <div class="sticker sticker-shop"></div>
+                    <span class="service-name">Боты для магазинов (с админскими панелями)</span>
+                </div>
+                <div class="price">
+                    <span class="rub">1 000₽</span>
+                    <span class="usd">11,94$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-download"></div>
+                    <span class="service-name">Боты для скачивания видео с платформ (YouTube, TikTok)</span>
+                </div>
+                <div class="price">
+                    <span class="rub">300₽</span>
+                    <span class="usd">3,58$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-anonymous"></div>
+                    <span class="service-name">Боты анонимного общения</span>
+                </div>
+                <div class="price">
+                    <span class="rub">500₽</span>
+                    <span class="usd">5,97$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-todo"></div>
+                    <span class="service-name">Боты ToDo (напоминание)</span>
+                </div>
+                <div class="price">
+                    <span class="rub">300₽</span>
+                    <span class="usd">3,58$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-posting"></div>
+                    <span class="service-name">Боты для постинга в ТГК автоматически</span>
+                </div>
+                <div class="price">
+                    <span class="rub">450₽</span>
+                    <span class="usd">5,37$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-encrypt"></div>
+                    <span class="service-name">Бот шифровальщик/дешифровальщик текстов (Base64, ROT13)</span>
+                </div>
+                <div class="price">
+                    <span class="rub">400₽</span>
+                    <span class="usd">4,78$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-server"></div>
+                    <span class="service-name">Бот для управления сервером</span>
+                </div>
+                <div class="price">
+                    <span class="rub">400₽</span>
+                    <span class="usd">4,78$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-osint"></div>
+                    <span class="service-name">Вход в приватный канал с инструментами OSINT</span>
+                </div>
+                <div class="price">
+                    <span class="rub">200₽</span>
+                    <span class="usd">2,39$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-db"></div>
+                    <span class="service-name">БД UserBox'а</span>
+                </div>
+                <div class="price">
+                    <span class="rub">100₽</span>
+                    <span class="usd">1$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-db"></div>
+                    <span class="service-name">БД LeakOsint'а</span>
+                </div>
+                <div class="price">
+                    <span class="rub">100₽</span>
+                    <span class="usd">1$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-software"></div>
+                    <span class="service-name">Софт для OSINT</span>
+                </div>
+                <div class="price">
+                    <span class="rub">400₽</span>
+                    <span class="usd">4,78$</span>
+                </div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="sticker sticker-software"></div>
+                    <span class="service-name">Бот для OSINT</span>
+                </div>
+                <div class="price">
+                    <span class="rub">400₽</span>
+                    <span class="usd">4,78$</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contacts">
+        <p>Связь: 
+            <a href="https://t.me/yarikmudro" class="tg-link" target="_blank">@yarikmudro</a>, 
+            <a href="https://t.me/mudrosuka" class="tg-link" target="_blank">@mudrosuka</a> в Telegram
+        </p>
+    </div>
+
+    <script>
+        // Простой скрипт для добавления анимации при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.price-item');
+            
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 + index * 80);
+            });
+        });
+    </script>
+</body>
+</html>
